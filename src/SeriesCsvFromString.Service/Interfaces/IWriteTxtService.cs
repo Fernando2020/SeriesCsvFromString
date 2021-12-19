@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace SeriesCsvFromString.Service.Interfaces
 {
-    public interface IReadCsv
+    public interface IWriteTxtService
     {
-        List<Candle> GetQuotesFromCsvMetaTrader(string path);
+        void WriteCommandInsertInInTxt(List<Candle> candles, string path);
     }
 }

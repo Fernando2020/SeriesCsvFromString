@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace SeriesCsvFromString.Console.Services
 {
-    public class ReadCsv : IReadCsv
+    public class ReadCsvService : IReadCsvService
     {
         public List<Candle> GetQuotesFromCsvMetaTrader(string pathAndFileName)
         {
