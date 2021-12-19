@@ -3,6 +3,7 @@ using SeriesCsvFromString.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Text;
 
 namespace SeriesCsvFromString.Console.Services
@@ -31,12 +32,15 @@ namespace SeriesCsvFromString.Console.Services
             foreach (var candle in candles)
             {
                 command.AppendLine($@"INSERT INTO CANDLES (ID, TIME, OPEN, HIGH, LOW, CLOSE, TICK_VOLUME, SPREAD, REAL_VOLUME, SERIE_ID, CHANGE_DATE, CREATION_DATE)
-                                    VALUES(uuid_generate_v4(),{candle.Time}, {candle.Open.ToString(CultureInfo.InvariantCulture)}, {candle.High.ToString(CultureInfo.InvariantCulture)}, 
-                                    {candle.Low.ToString(CultureInfo.InvariantCulture)}, {candle.Close.ToString(CultureInfo.InvariantCulture)}, 
-                                    {candle.TickVolume}, {candle.Spread}, {candle.RealVolume}, {serie_id}, current_timestamp, current_timestamp);
-                                    {Environment.NewLine}");
+                    VALUES(uuid_generate_v4(),{candle.Time}, {candle.Open.ToString(CultureInfo.InvariantCulture)}, {candle.High.ToString(CultureInfo.InvariantCulture)}, 
+                    {candle.Low.ToString(CultureInfo.InvariantCulture)}, {candle.Close.ToString(CultureInfo.InvariantCulture)}, 
+                    {candle.TickVolume}, {candle.Spread}, {candle.RealVolume}, {serie_id}, current_timestamp, current_timestamp);
+                    {Environment.NewLine}");
             }
 
+            StreamWriter sw = new StreamWriter(path);
+            sw.WriteLine(command.ToString());
+            sw.Close();
         }
     }
 }

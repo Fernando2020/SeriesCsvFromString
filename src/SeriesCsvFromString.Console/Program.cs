@@ -31,16 +31,20 @@ namespace SeriesCsvFromString.Console
             {
                 try
                 {
-                    System.Console.WriteLine($@"Informe o nome do arquivo '.csv' obtido exclusivamente do Meta Trader:");
-                    string read = System.Console.ReadLine();
-                    string nameCsv = string.IsNullOrEmpty(read) ? @$"ccm$_h1_2016_2021_2.csv" : read;
+                    System.Console.WriteLine($@"Informe o caminho do arquivo '.csv' obtido exclusivamente do Meta Trader.");
+                    System.Console.WriteLine($@"Ex: C:\Temp\SeriesCsvFromString\ccm$_h1_2016_2021_2.csv");
+                    string pathCsv = System.Console.ReadLine();
 
-                    System.Console.WriteLine($@"Informe o caminho para salvar o arquivo '.txt':");
+                    System.Console.WriteLine($@"Informe o caminho e nome para salvar o arquivo '.txt'.");
+                    System.Console.WriteLine($@"Ex: C:\Temp\SeriesCsvFromString\archiveName.txt");
                     string pathTxt = System.Console.ReadLine();
 
-                    var candles = readCsvService.GetQuotesFromCsvMetaTrader(nameCsv);
+                    var candles = readCsvService.GetQuotesFromCsvMetaTrader(pathCsv);
 
                     writeTxtService.WriteCommandInsertInInTxt(candles, pathTxt);
+
+                    System.Console.WriteLine($@"Operação realizada com sucesso!");
+                    System.Console.WriteLine($@"Acesse seu arquivo em: {pathTxt}");
                 }
                 catch (Exception e)
                 {
