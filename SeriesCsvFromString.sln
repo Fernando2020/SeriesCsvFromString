@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeriesCsvFromString.Console", "src\SeriesCsvFromString.Console\SeriesCsvFromString.Console.csproj", "{CB32D68C-C7AD-4D77-86C8-BE23A21A2A94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB32D68C-C7AD-4D77-86C8-BE23A21A2A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB32D68C-C7AD-4D77-86C8-BE23A21A2A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB32D68C-C7AD-4D77-86C8-BE23A21A2A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB32D68C-C7AD-4D77-86C8-BE23A21A2A94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91302251-67F8-4D2C-BD60-711D7F442766}
+	EndGlobalSection
+EndGlobal
